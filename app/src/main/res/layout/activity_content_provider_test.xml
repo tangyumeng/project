@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ContentProvider演示"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ContentProvider演示已自动执行，请查看Logcat输出：\n\n1. 查询所有用户\n2. 插入新用户\n3. 查询特定用户\n4. 更新用户信息\n5. 删除用户\n6. 再次查询验证结果\n\nContentProvider主要用于：\n• 应用间数据共享\n• 统一数据访问接口\n• 权限控制\n• 数据变化通知"
+        android:textSize="16sp"
+        android:lineSpacingMultiplier="1.5" />
+
+</LinearLayout>

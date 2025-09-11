@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 权限声明 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,16 +16,68 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
+        
+        <!-- 主Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Project">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Activity生命周期演示 -->
+        <activity
+            android:name=".LifecycleActivity"
+            android:exported="true"
+            android:label="Activity生命周期演示" />
+
+        <!-- ContentProvider测试Activity -->
+        <activity
+            android:name=".ContentProviderTestActivity"
+            android:exported="true"
+            android:label="ContentProvider演示" />
+
+        <!-- Service组件 -->
+        <service
+            android:name=".DemoService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- BroadcastReceiver组件 -->
+        <receiver
+            android:name=".DemoBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <!-- 自定义广播 -->
+                <action android:name="com.modelbest.project.CUSTOM_BROADCAST" />
+                
+                <!-- 系统广播 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                
+                <!-- 应用包相关广播 -->
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ContentProvider组件 -->
+        <provider
+            android:name=".DemoContentProvider"
+            android:authorities="com.modelbest.project.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="android.permission.READ_EXTERNAL_STORAGE"
+            android:writePermission="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     </application>
 
 </manifest>

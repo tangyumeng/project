@@ -1,11 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android四大组件演示"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Activity演示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity组件"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_lifecycle_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activity生命周期演示"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Service演示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service组件"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_start_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="启动Service" />
+
+        <Button
+            android:id="@+id/btn_stop_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="停止Service" />
+
+        <Button
+            android:id="@+id/btn_bind_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绑定Service" />
+
+        <Button
+            android:id="@+id/btn_unbind_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="解绑Service" />
+
+        <Button
+            android:id="@+id/btn_get_service_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取Service数据"
+            android:layout_marginBottom="24dp" />
+
+        <!-- BroadcastReceiver演示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BroadcastReceiver组件"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送自定义广播"
+            android:layout_marginBottom="24dp" />
+
+        <!-- ContentProvider演示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ContentProvider组件"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_content_provider_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ContentProvider演示"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="说明：\n• 点击相应按钮体验各组件功能\n• 观察Logcat输出了解生命周期\n• 系统广播会在相应事件发生时自动触发\n• ContentProvider演示数据的增删改查操作"
+            android:textSize="14sp"
+            android:lineSpacingMultiplier="1.5"
+            android:background="#F5F5F5"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -108,6 +108,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_content_provider_demo).setOnClickListener {
             startActivity(Intent(this, ContentProviderTestActivity::class.java))
         }
+
+        // 网络协议学习按钮
+        findViewById<Button>(R.id.btn_network_protocol).setOnClickListener {
+            startActivity(Intent(this, NetworkProtocolActivity::class.java))
+        }
     }
 
     override fun onDestroy() {

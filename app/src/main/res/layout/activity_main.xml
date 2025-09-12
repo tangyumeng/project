@@ -87,7 +87,13 @@
             android:id="@+id/btn_send_broadcast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="发送自定义广播"
+            android:text="发送自定义广播" />
+
+        <Button
+            android:id="@+id/btn_broadcast_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BroadcastReceiver详细测试"
             android:layout_marginBottom="24dp" />
 
         <!-- ContentProvider演示 -->
@@ -104,6 +110,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ContentProvider演示"
+            android:layout_marginBottom="24dp" />
+
+        <!-- 网络协议学习 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网络协议学习"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_network_protocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络协议学习中心"
+            android:backgroundTint="@color/teal_700"
             android:layout_marginBottom="16dp" />
 
         <TextView

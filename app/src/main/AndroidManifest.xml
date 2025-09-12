@@ -5,6 +5,10 @@
     <!-- 权限声明 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 网络协议学习相关权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -40,6 +44,36 @@
             android:exported="true"
             android:label="ContentProvider演示" />
 
+        <!-- BroadcastReceiver测试Activity -->
+        <activity
+            android:name=".BroadcastTestActivity"
+            android:exported="true"
+            android:label="BroadcastReceiver测试" />
+
+        <!-- 网络协议学习Activity -->
+        <activity
+            android:name=".NetworkProtocolActivity"
+            android:exported="true"
+            android:label="网络协议学习" />
+
+        <!-- HTTP协议示例Activity -->
+        <activity
+            android:name=".HttpProtocolActivity"
+            android:exported="true"
+            android:label="HTTP协议示例" />
+
+        <!-- TCP/UDP协议示例Activity -->
+        <activity
+            android:name=".SocketProtocolActivity"
+            android:exported="true"
+            android:label="TCP/UDP Socket示例" />
+
+        <!-- WebSocket协议示例Activity -->
+        <activity
+            android:name=".WebSocketActivity"
+            android:exported="true"
+            android:label="WebSocket协议示例" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"
@@ -51,18 +85,15 @@
             android:name=".DemoBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
+            <!-- 自定义广播和一些系统广播 -->
             <intent-filter android:priority="1000">
-                <!-- 自定义广播 -->
                 <action android:name="com.modelbest.project.CUSTOM_BROADCAST" />
-                
-                <!-- 系统广播 -->
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.intent.action.BATTERY_LOW" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.SCREEN_OFF" />
-                <action android:name="android.intent.action.SCREEN_ON" />
-                
-                <!-- 应用包相关广播 -->
+            </intent-filter>
+            
+            <!-- 应用包相关广播需要单独的intent-filter -->
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
                 <data android:scheme="package" />
@@ -77,6 +108,16 @@
             android:exported="true"
             android:readPermission="android.permission.READ_EXTERNAL_STORAGE"
             android:writePermission="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+        <receiver android:name=".CustomReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="TODO"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.modelbest.project.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 

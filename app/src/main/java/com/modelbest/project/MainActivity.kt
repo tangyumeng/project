@@ -7,9 +7,14 @@ import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +22,28 @@ class MainActivity : AppCompatActivity() {
         private const val TAG = "MainActivity"
     }
 
+    // Service相关
     private var demoService: DemoService? = null
     private var isServiceBound = false
+
+    // UI组件
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var techPointAdapter: TechPointAdapter
+    private lateinit var tvTotalCount: TextView
+    private lateinit var tvCategoryCount: TextView
+    private lateinit var tvAdvancedCount: TextView
+    private lateinit var serviceControlsLayout: View
+
+    // 筛选按钮
+    private lateinit var btnFilterAll: TextView
+    private lateinit var btnFilterComponents: TextView
+    private lateinit var btnFilterInterview: TextView
+    private lateinit var btnFilterPerformance: TextView
+    private lateinit var btnFilterNetworking: TextView
+
+    // 数据
+    private var allTechPoints: List<TechPoint> = emptyList()
+    private var currentFilter: TechCategory? = null
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -41,15 +66,65 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        setupButtons()
+        initViews()
+        setupRecyclerView()
+        setupFilterButtons()
+        setupServiceControls()
+        loadTechPoints()
+        updateStatistics()
     }
 
-    private fun setupButtons() {
-        // Activity生命周期演示按钮
-        findViewById<Button>(R.id.btn_lifecycle_demo).setOnClickListener {
-            startActivity(Intent(this, LifecycleActivity::class.java))
+    private fun initViews() {
+        recyclerView = findViewById(R.id.rv_tech_points)
+        tvTotalCount = findViewById(R.id.tv_total_count)
+        tvCategoryCount = findViewById(R.id.tv_category_count)
+        tvAdvancedCount = findViewById(R.id.tv_advanced_count)
+        serviceControlsLayout = findViewById(R.id.layout_service_controls)
+
+        // 筛选按钮
+        btnFilterAll = findViewById(R.id.btn_filter_all)
+        btnFilterComponents = findViewById(R.id.btn_filter_components)
+        btnFilterInterview = findViewById(R.id.btn_filter_interview)
+        btnFilterPerformance = findViewById(R.id.btn_filter_performance)
+        btnFilterNetworking = findViewById(R.id.btn_filter_networking)
+    }
+
+    private fun setupRecyclerView() {
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        techPointAdapter = TechPointAdapter(emptyList()) { techPoint ->
+            onTechPointClicked(techPoint)
+        }
+        recyclerView.adapter = techPointAdapter
+    }
+
+    private fun setupFilterButtons() {
+        btnFilterAll.setOnClickListener {
+            filterTechPoints(null)
+            updateFilterButtonStates(btnFilterAll)
         }
 
+        btnFilterComponents.setOnClickListener {
+            filterTechPoints(TechCategory.ANDROID_COMPONENTS)
+            updateFilterButtonStates(btnFilterComponents)
+        }
+
+        btnFilterInterview.setOnClickListener {
+            filterTechPoints(TechCategory.INTERVIEW_TOPICS)
+            updateFilterButtonStates(btnFilterInterview)
+        }
+
+        btnFilterPerformance.setOnClickListener {
+            filterTechPoints(TechCategory.PERFORMANCE)
+            updateFilterButtonStates(btnFilterPerformance)
+        }
+
+        btnFilterNetworking.setOnClickListener {
+            filterTechPoints(TechCategory.NETWORKING)
+            updateFilterButtonStates(btnFilterNetworking)
+        }
+    }
+
+    private fun setupServiceControls() {
         // 启动Service按钮
         findViewById<Button>(R.id.btn_start_service).setOnClickListener {
             val intent = Intent(this, DemoService::class.java)
@@ -74,28 +149,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // 解绑Service按钮
-        findViewById<Button>(R.id.btn_unbind_service).setOnClickListener {
-            if (isServiceBound) {
-                unbindService(serviceConnection)
-                isServiceBound = false
-                demoService = null
-                Toast.makeText(this, "Service已解绑", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Service未绑定", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // 获取Service数据按钮
-        findViewById<Button>(R.id.btn_get_service_data).setOnClickListener {
-            if (isServiceBound && demoService != null) {
-                val counter = demoService!!.getCurrentCounter()
-                Toast.makeText(this, "Service计数器: $counter", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Service未绑定", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         // 发送自定义广播按钮
         findViewById<Button>(R.id.btn_send_broadcast).setOnClickListener {
             val intent = Intent(DemoBroadcastReceiver.CUSTOM_ACTION)
@@ -103,25 +156,72 @@ class MainActivity : AppCompatActivity() {
             sendBroadcast(intent)
             Toast.makeText(this, "自定义广播已发送", Toast.LENGTH_SHORT).show()
         }
+    }
 
-        // ContentProvider演示按钮
-        findViewById<Button>(R.id.btn_content_provider_demo).setOnClickListener {
-            startActivity(Intent(this, ContentProviderTestActivity::class.java))
+    private fun loadTechPoints() {
+        allTechPoints = TechPointDataSource.getAllTechPoints()
+        techPointAdapter.updateData(allTechPoints)
+    }
+
+    private fun filterTechPoints(category: TechCategory?) {
+        currentFilter = category
+        val filteredPoints = if (category == null) {
+            allTechPoints
+        } else {
+            TechPointDataSource.getTechPointsByCategory(category)
+        }
+        techPointAdapter.updateData(filteredPoints)
+    }
+
+    private fun updateFilterButtonStates(selectedButton: TextView) {
+        // 重置所有按钮状态
+        val buttons = listOf(btnFilterAll, btnFilterComponents, btnFilterInterview, 
+                           btnFilterPerformance, btnFilterNetworking)
+        
+        buttons.forEach { button ->
+            if (button == selectedButton) {
+                button.setBackgroundResource(R.drawable.bg_filter_selected)
+                button.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            } else {
+                button.setBackgroundResource(R.drawable.bg_filter_normal)
+                button.setTextColor(ContextCompat.getColor(this, R.color.colorOnSurface))
+            }
+        }
+    }
+
+    private fun updateStatistics() {
+        val totalCount = allTechPoints.size
+        val categoryCount = TechCategory.values().size
+        val advancedCount = allTechPoints.count { 
+            it.difficulty == Difficulty.ADVANCED || it.difficulty == Difficulty.EXPERT 
         }
 
-        // 网络协议学习按钮
-        findViewById<Button>(R.id.btn_network_protocol).setOnClickListener {
-            startActivity(Intent(this, NetworkProtocolActivity::class.java))
+        tvTotalCount.text = totalCount.toString()
+        tvCategoryCount.text = categoryCount.toString()
+        tvAdvancedCount.text = advancedCount.toString()
+    }
+
+    private fun onTechPointClicked(techPoint: TechPoint) {
+        when (techPoint.id) {
+            "service_demo" -> {
+                // 显示Service控制面板
+                if (serviceControlsLayout.visibility == View.GONE) {
+                    serviceControlsLayout.visibility = View.VISIBLE
+                    Toast.makeText(this, "Service控制面板已展开", Toast.LENGTH_SHORT).show()
+                } else {
+                    serviceControlsLayout.visibility = View.GONE
+                }
+                return
+            }
         }
 
-        // 深拷贝vs浅拷贝演示按钮
-        findViewById<Button>(R.id.btn_copy_demo).setOnClickListener {
-            startActivity(Intent(this, CopyDemoActivity::class.java))
-        }
-
-        // 性能优化策略演示按钮
-        findViewById<Button>(R.id.btn_performance_optimization).setOnClickListener {
-            startActivity(Intent(this, PerformanceOptimizationActivity::class.java))
+        // 跳转到对应的Activity
+        try {
+            val intent = Intent(this, techPoint.targetActivity)
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(this, "功能开发中...", Toast.LENGTH_SHORT).show()
+            Log.e(TAG, "Failed to start activity", e)
         }
     }
 

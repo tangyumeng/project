@@ -24,6 +24,7 @@ class PerformanceOptimizationActivity : AppCompatActivity() {
     private lateinit var btnLazyCopyPerformance: Button
     private lateinit var btnLazyCopyScenario: Button
     private lateinit var btnSmartContainer: Button
+    private lateinit var btnPerformanceAnalysis: Button
     private lateinit var btnClear: Button
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +45,7 @@ class PerformanceOptimizationActivity : AppCompatActivity() {
         btnLazyCopyPerformance = findViewById(R.id.btn_lazy_copy_performance)
         btnLazyCopyScenario = findViewById(R.id.btn_lazy_copy_scenario)
         btnSmartContainer = findViewById(R.id.btn_smart_container)
+        btnPerformanceAnalysis = findViewById(R.id.btn_performance_analysis)
         btnClear = findViewById(R.id.btn_clear)
     }
     
@@ -74,6 +76,10 @@ class PerformanceOptimizationActivity : AppCompatActivity() {
         
         btnSmartContainer.setOnClickListener {
             demonstrateSmartContainer()
+        }
+        
+        btnPerformanceAnalysis.setOnClickListener {
+            demonstratePerformanceAnalysis()
         }
         
         btnClear.setOnClickListener {
@@ -227,6 +233,38 @@ class PerformanceOptimizationActivity : AppCompatActivity() {
             • 集合类的COW包装
             • 复杂对象的延迟拷贝
             • 函数式编程风格
+            
+            ==========================================
+            
+        """.trimIndent())
+    }
+    
+    private fun demonstratePerformanceAnalysis() {
+        val analysis = DeepCopyPerformanceAnalysis.analyzeScenarioPerformance()
+        val explanation = DeepCopyPerformanceAnalysis.explainTheoryVsReality()
+        val realWorldTest = RealWorldPerformanceTest.androidScenarioTest()
+        
+        appendResult("""
+            $analysis
+            
+            $explanation
+            
+            $realWorldTest
+            
+            🎯 面试答题要点：
+            Q: 为什么DataClass copy测试最快？
+            A: 
+            1. 编译器优化：copy()方法被内联，减少开销
+            2. 对象简单性：简单对象copy()等同构造函数
+            3. JVM优化：热点代码被JIT编译器优化
+            4. 测试局限：微基准可能不反映真实场景
+            
+            Q: 实际项目中如何选择？
+            A:
+            • 简单对象：DataClass copy（性能+可读性）
+            • 复杂嵌套：手动深拷贝（性能考虑）
+            • 通用场景：序列化（兼容性好）
+            • 性能关键：实际场景测试决定
             
             ==========================================
             

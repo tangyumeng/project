@@ -1,168 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:background="#F8F9FA">
 
+    <!-- 顶部标题栏 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:background="@color/colorPrimary"
+        android:padding="20dp"
+        android:elevation="4dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android四大组件演示"
+            android:text="Android技术学习中心"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_marginBottom="32dp" />
-
-        <!-- Activity演示 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Activity组件"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_lifecycle_demo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Activity生命周期演示"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Service演示 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Service组件"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_start_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="启动Service" />
-
-        <Button
-            android:id="@+id/btn_stop_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="停止Service" />
-
-        <Button
-            android:id="@+id/btn_bind_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="绑定Service" />
-
-        <Button
-            android:id="@+id/btn_unbind_service"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="解绑Service" />
-
-        <Button
-            android:id="@+id/btn_get_service_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="获取Service数据"
-            android:layout_marginBottom="24dp" />
-
-        <!-- BroadcastReceiver演示 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BroadcastReceiver组件"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_send_broadcast"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="发送自定义广播" />
-
-        <Button
-            android:id="@+id/btn_broadcast_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BroadcastReceiver详细测试"
-            android:layout_marginBottom="24dp" />
-
-        <!-- ContentProvider演示 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ContentProvider组件"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_content_provider_demo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ContentProvider演示"
-            android:layout_marginBottom="24dp" />
-
-        <!-- 网络协议学习 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="网络协议学习"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_network_protocol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="网络协议学习中心"
-            android:backgroundTint="@color/teal_700"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Android面试知识点 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Android面试知识点"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_copy_demo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="深拷贝 vs 浅拷贝演示"
-            android:backgroundTint="#E91E63"
-            android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/btn_performance_optimization"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="性能优化策略 (对象池 + 延迟拷贝)"
-            android:backgroundTint="#9C27B0"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@android:color/white"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="说明：\n• 点击相应按钮体验各组件功能\n• 观察Logcat输出了解生命周期\n• 系统广播会在相应事件发生时自动触发\n• ContentProvider演示数据的增删改查操作"
+            android:text="深入学习Android核心技术和面试要点"
             android:textSize="14sp"
-            android:lineSpacingMultiplier="1.5"
-            android:background="#F5F5F5"
-            android:padding="12dp" />
+            android:textColor="#E3F2FD"
+            android:gravity="center"
+            android:layout_marginTop="4dp" />
 
     </LinearLayout>
 
-</ScrollView>
+    <!-- 统计信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="2dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="技术点"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E0E0E0" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_category_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E0E0E0" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_advanced_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高级"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 筛选按钮 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/btn_filter_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部"
+                android:background="@drawable/bg_filter_selected"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_filter_components"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="四大组件"
+                android:background="@drawable/bg_filter_normal"
+                android:textColor="#666666"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_filter_interview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="面试高频"
+                android:background="@drawable/bg_filter_normal"
+                android:textColor="#666666"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_filter_performance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性能优化"
+                android:background="@drawable/bg_filter_normal"
+                android:textColor="#666666"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_filter_networking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网络协议"
+                android:background="@drawable/bg_filter_normal"
+                android:textColor="#666666"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- 技术点列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tech_points"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_tech_point" />
+
+    <!-- 底部隐藏的Service控制区域 -->
+    <LinearLayout
+        android:id="@+id/layout_service_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#F0F0F0"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_start_service"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="启动Service"
+            android:textSize="10sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_stop_service"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="停止Service"
+            android:textSize="10sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_bind_service"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="绑定Service"
+            android:textSize="10sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_send_broadcast"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="发送广播"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

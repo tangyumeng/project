@@ -86,6 +86,12 @@
             android:exported="true"
             android:label="性能优化策略演示" />
 
+        <!-- Java泛型类型擦除演示Activity -->
+        <activity
+            android:name=".JavaGenericsActivity"
+            android:exported="true"
+            android:label="Java泛型类型擦除演示" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"

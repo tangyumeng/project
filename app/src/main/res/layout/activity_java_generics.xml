@@ -7,13 +7,13 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#F5F5F5"
-    tools:context=".PerformanceOptimizationActivity">
+    tools:context=".JavaGenericsActivity">
 
     <!-- 标题 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="性能优化策略演示"
+        android:text="Java泛型类型擦除详解"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#2196F3"
@@ -33,14 +33,13 @@
         android:layout_marginBottom="16dp"
         android:elevation="2dp">
 
-        <!-- 对象池演示 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🔄 对象池模式演示"
+            android:text="核心概念演示"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#FF9800"
+            android:textColor="#333333"
             android:layout_marginBottom="12dp" />
 
         <LinearLayout
@@ -50,75 +49,22 @@
             android:layout_marginBottom="8dp">
 
             <Button
-                android:id="@+id/btn_object_pool_basic"
+                android:id="@+id/btn_type_erasure_demo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="基础使用"
+                android:text="类型擦除原理"
                 android:textColor="@android:color/white"
                 android:background="#FF9800"
                 android:layout_marginEnd="4dp"
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/btn_object_pool_performance"
+                android:id="@+id/btn_runtime_type_info"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="性能测试"
-                android:textColor="@android:color/white"
-                android:background="#FF9800"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_object_pool_android"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Android应用"
-                android:textColor="@android:color/white"
-                android:background="#FF9800"
-                android:layout_marginStart="4dp"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <!-- 延迟拷贝演示 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⏰ 延迟拷贝策略演示"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#4CAF50"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
-            <Button
-                android:id="@+id/btn_lazy_copy_basic"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="COW基础"
-                android:textColor="@android:color/white"
-                android:background="#4CAF50"
-                android:layout_marginEnd="4dp"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_lazy_copy_performance"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="性能对比"
+                android:text="运行时类型"
                 android:textColor="@android:color/white"
                 android:background="#4CAF50"
                 android:layout_marginStart="4dp"
@@ -126,43 +72,42 @@
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/btn_lazy_copy_scenario"
+                android:id="@+id/btn_wildcard_demo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="实际场景"
-                android:textColor="@android:color/white"
-                android:background="#4CAF50"
-                android:layout_marginStart="4dp"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:id="@+id/btn_smart_container"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="智能容器"
+                android:text="通配符类型"
                 android:textColor="@android:color/white"
                 android:background="#9C27B0"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_reflection_workaround"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="反射绕过"
+                android:textColor="@android:color/white"
+                android:background="#FF5722"
                 android:layout_marginEnd="4dp"
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/btn_performance_analysis"
+                android:id="@+id/btn_practical_example"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="性能分析"
+                android:text="实际应用"
                 android:textColor="@android:color/white"
-                android:background="#FF5722"
+                android:background="#795548"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:textSize="12sp" />
@@ -228,12 +173,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="💡 提示：这些优化策略在高级Android面试中经常被问到"
+        android:text="💡 提示：泛型类型擦除是Java面试中的高频考点"
         android:textSize="12sp"
         android:textColor="#666666"
         android:gravity="center"
         android:padding="8dp"
         android:layout_marginTop="8dp"
-        android:background="#E8F5E8" />
+        android:background="#FFF3E0" />
 
 </LinearLayout>

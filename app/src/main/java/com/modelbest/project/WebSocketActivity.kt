@@ -216,7 +216,7 @@ class WebSocketActivity : AppCompatActivity() {
         }
 
         try {
-            val pingData = ByteString.encodeUtf8("ping-${System.currentTimeMillis()}")
+            val pingData = "ping-${System.currentTimeMillis()}".toByteArray().let { ByteString.of(*it) }
             val success = webSocket!!.send(pingData)
             
             if (success) {

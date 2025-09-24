@@ -74,6 +74,18 @@
             android:exported="true"
             android:label="WebSocket协议示例" />
 
+        <!-- 深拷贝vs浅拷贝演示Activity -->
+        <activity
+            android:name=".CopyDemoActivity"
+            android:exported="true"
+            android:label="深拷贝vs浅拷贝演示" />
+
+        <!-- 性能优化策略演示Activity -->
+        <activity
+            android:name=".PerformanceOptimizationActivity"
+            android:exported="true"
+            android:label="性能优化策略演示" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"

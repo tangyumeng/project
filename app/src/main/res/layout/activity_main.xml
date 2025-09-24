@@ -127,6 +127,31 @@
             android:layout_height="wrap_content"
             android:text="网络协议学习中心"
             android:backgroundTint="@color/teal_700"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Android面试知识点 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android面试知识点"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_copy_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="深拷贝 vs 浅拷贝演示"
+            android:backgroundTint="#E91E63"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_performance_optimization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="性能优化策略 (对象池 + 延迟拷贝)"
+            android:backgroundTint="#9C27B0"
             android:layout_marginBottom="16dp" />
 
         <TextView

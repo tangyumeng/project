@@ -2,4 +2,30 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Material Design Colors -->
+    <color name="teal_700">#FF018786</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryVariant">#FF3700B3</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+    
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#FF03DAC6</color>
+    <color name="colorSecondaryVariant">#FF018786</color>
+    <color name="colorOnSecondary">#FF000000</color>
+    
+    <!-- Background Colors -->
+    <color name="colorBackground">#FFFFFFFF</color>
+    <color name="colorSurface">#FFFFFFFF</color>
+    <color name="colorOnBackground">#FF000000</color>
+    <color name="colorOnSurface">#FF000000</color>
+    
+    <!-- Error Colors -->
+    <color name="colorError">#FFB00020</color>
+    <color name="colorOnError">#FFFFFFFF</color>
 </resources>

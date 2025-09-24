@@ -113,6 +113,16 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_network_protocol).setOnClickListener {
             startActivity(Intent(this, NetworkProtocolActivity::class.java))
         }
+
+        // 深拷贝vs浅拷贝演示按钮
+        findViewById<Button>(R.id.btn_copy_demo).setOnClickListener {
+            startActivity(Intent(this, CopyDemoActivity::class.java))
+        }
+
+        // 性能优化策略演示按钮
+        findViewById<Button>(R.id.btn_performance_optimization).setOnClickListener {
+            startActivity(Intent(this, PerformanceOptimizationActivity::class.java))
+        }
     }
 
     override fun onDestroy() {

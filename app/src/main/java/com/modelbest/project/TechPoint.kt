@@ -123,6 +123,39 @@ object TechPointDataSource {
                 tags = listOf("泛型", "类型擦除", "反射", "TypeToken")
             ),
             
+            TechPoint(
+                id = "java_variable_lifecycle",
+                title = "Java变量生命周期",
+                description = "深入分析成员变量、局部变量、静态变量的创建和回收时机，理解JVM内存模型",
+                category = TechCategory.INTERVIEW_TOPICS,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = JavaVariableLifecycleActivity::class.java,
+                colorRes = R.color.purple_500,
+                tags = listOf("变量生命周期", "JVM内存", "垃圾回收", "栈堆内存")
+            ),
+            
+            TechPoint(
+                id = "string_length_principle",
+                title = "String.length()原理",
+                description = "深入解析String.length()的实现机制、内部数据结构、字符编码影响和性能特征",
+                category = TechCategory.INTERVIEW_TOPICS,
+                difficulty = Difficulty.INTERMEDIATE,
+                targetActivity = StringLengthActivity::class.java,
+                colorRes = R.color.purple_500,
+                tags = listOf("String内部结构", "字符编码", "性能优化", "Unicode")
+            ),
+            
+            TechPoint(
+                id = "activity_fragment_communication",
+                title = "Activity与Fragment通信",
+                description = "详解Activity与Fragment间的各种通信方式：Bundle、接口回调、ViewModel、Fragment Result API",
+                category = TechCategory.ANDROID_COMPONENTS,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = ActivityFragmentCommunicationActivity::class.java,
+                colorRes = R.color.colorPrimary,
+                tags = listOf("Fragment通信", "ViewModel", "接口回调", "架构设计")
+            ),
+            
             // 网络协议
             TechPoint(
                 id = "network_protocols",

@@ -92,6 +92,24 @@
             android:exported="true"
             android:label="Java泛型类型擦除演示" />
 
+        <!-- Java变量生命周期演示Activity -->
+        <activity
+            android:name=".JavaVariableLifecycleActivity"
+            android:exported="true"
+            android:label="Java变量生命周期演示" />
+
+        <!-- String.length()原理演示Activity -->
+        <activity
+            android:name=".StringLengthActivity"
+            android:exported="true"
+            android:label="String.length()原理演示" />
+
+        <!-- Activity与Fragment通信演示Activity -->
+        <activity
+            android:name=".ActivityFragmentCommunicationActivity"
+            android:exported="true"
+            android:label="Activity与Fragment通信演示" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"

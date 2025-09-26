@@ -20,6 +20,9 @@ class DemoService : Service() {
     private val binder = LocalBinder()
     private var serviceJob: Job? = null
     private var counter = 0
+    private var startTime = 0L
+    private var bindCount = 0
+    private var startCommandCount = 0
 
     /**
      * 本地Binder类，用于绑定服务时的通信
@@ -30,7 +33,8 @@ class DemoService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG, "onCreate: Service被创建")
+        startTime = System.currentTimeMillis()
+        Log.d(TAG, "📱 onCreate: Service被创建 (时间: $startTime)")
         
         // 典型应用场景：
         // 1. 初始化资源
@@ -39,7 +43,9 @@ class DemoService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d(TAG, "onStartCommand: Service启动，startId=$startId")
+        startCommandCount++
+        val operation = intent?.getStringExtra("operation") ?: "默认操作"
+        Log.d(TAG, "🚀 onStartCommand: 第${startCommandCount}次调用，startId=$startId，操作=$operation")
         
         // 启动一个后台任务
         startBackgroundTask()
@@ -57,7 +63,8 @@ class DemoService : Service() {
     }
 
     override fun onBind(intent: Intent): IBinder {
-        Log.d(TAG, "onBind: 客户端绑定到Service")
+        bindCount++
+        Log.d(TAG, "🔗 onBind: 第${bindCount}次绑定到Service")
 
         // 典型应用场景：
         // 1. 提供接口给Activity调用
@@ -68,7 +75,7 @@ class DemoService : Service() {
     }
 
     override fun onUnbind(intent: Intent): Boolean {
-        Log.d(TAG, "onUnbind: 客户端解绑Service")
+        Log.d(TAG, "🔌 onUnbind: 客户端解绑Service，剩余绑定数: ${bindCount-1}")
         
         // 典型应用场景：
         // 1. 清理客户端相关资源
@@ -79,7 +86,8 @@ class DemoService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy: Service被销毁")
+        val runTime = System.currentTimeMillis() - startTime
+        Log.d(TAG, "💀 onDestroy: Service被销毁，运行时间: ${runTime}ms")
         
         // 停止后台任务
         serviceJob?.cancel()
@@ -112,12 +120,41 @@ class DemoService : Service() {
     fun getCurrentCounter(): Int {
         return counter
     }
+    
+    /**
+     * 获取Service启动时间
+     */
+    fun getStartTime(): Long {
+        return startTime
+    }
+    
+    /**
+     * 获取Service运行时间
+     */
+    fun getRunningTime(): Long {
+        return System.currentTimeMillis() - startTime
+    }
+    
+    /**
+     * 获取Service数据
+     */
+    fun getServiceData(): String {
+        return "Service数据 - 计数器:$counter, 启动次数:$startCommandCount, 绑定次数:$bindCount"
+    }
+    
+    /**
+     * 重置计数器
+     */
+    fun resetCounter() {
+        counter = 0
+        Log.d(TAG, "🔄 计数器已重置")
+    }
 
     /**
      * 停止后台任务
      */
     fun stopBackgroundTask() {
         serviceJob?.cancel()
-        Log.d(TAG, "后台任务已停止")
+        Log.d(TAG, "⏹️ 后台任务已停止")
     }
 }

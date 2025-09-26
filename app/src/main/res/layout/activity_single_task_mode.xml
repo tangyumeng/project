@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F3E5F5"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SingleTask模式演示"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        tools:text="SingleTask模式 - 实例#1" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SingleTask模式信息"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="monospace"
+        tools:text="SingleTask模式信息详情" />
+
+    <TextView
+        android:id="@+id/tv_clear_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="栈清理信息将显示在这里"
+        android:textSize="12sp"
+        android:textColor="#9C27B0"
+        android:background="#FFF0F5"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="栈清理信息" />
+
+    <Button
+        android:id="@+id/btn_launch_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动Standard Activity"
+        android:textColor="@android:color/white"
+        android:background="#FF9800"
+        android:layout_marginBottom="12dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_launch_self"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动自己（栈清理测试）"
+        android:textColor="@android:color/white"
+        android:background="#9C27B0"
+        android:layout_marginBottom="12dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_create_stack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建Activity栈并测试清理"
+        android:textColor="@android:color/white"
+        android:background="#FF5722"
+        android:layout_marginBottom="12dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回上一页"
+        android:textColor="@android:color/white"
+        android:background="#607D8B"
+        android:padding="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 SingleTask模式：栈内复用，清空上层Activity"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#F3E5F5" />
+
+</LinearLayout>

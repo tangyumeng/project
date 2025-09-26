@@ -68,6 +68,17 @@ object TechPointDataSource {
             ),
             
             TechPoint(
+                id = "service_start_bind_comparison",
+                title = "startService vs bindService",
+                description = "深入对比startService和bindService的区别、生命周期和使用场景",
+                category = TechCategory.ANDROID_COMPONENTS,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = ServiceComparisonActivity::class.java,
+                colorRes = R.color.colorPrimary,
+                tags = listOf("startService", "bindService", "Service生命周期", "后台任务")
+            ),
+            
+            TechPoint(
                 id = "broadcast_receiver",
                 title = "BroadcastReceiver广播",
                 description = "系统广播和自定义广播的接收与发送，理解广播的使用场景和最佳实践",
@@ -154,6 +165,39 @@ object TechPointDataSource {
                 targetActivity = ActivityFragmentCommunicationActivity::class.java,
                 colorRes = R.color.colorPrimary,
                 tags = listOf("Fragment通信", "ViewModel", "接口回调", "架构设计")
+            ),
+            
+            TechPoint(
+                id = "launch_mode_demo",
+                title = "Activity LaunchMode详解",
+                description = "深入理解Android四种LaunchMode的特点、任务栈管理和实际应用场景",
+                category = TechCategory.ANDROID_COMPONENTS,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = LaunchModeActivity::class.java,
+                colorRes = R.color.colorPrimary,
+                tags = listOf("LaunchMode", "任务栈", "Activity生命周期", "Intent Flags")
+            ),
+            
+            TechPoint(
+                id = "android_context",
+                title = "Android Context详解",
+                description = "深入理解Context的本质、继承体系、使用场景和内存泄漏防护",
+                category = TechCategory.ANDROID_COMPONENTS,
+                difficulty = Difficulty.INTERMEDIATE,
+                targetActivity = AndroidContextActivity::class.java,
+                colorRes = R.color.colorPrimary,
+                tags = listOf("Context", "内存泄漏", "系统服务", "架构设计")
+            ),
+            
+            TechPoint(
+                id = "intent_filter",
+                title = "IntentFilter详解",
+                description = "深入理解IntentFilter的匹配机制、使用场景、静态动态注册和实际应用",
+                category = TechCategory.ANDROID_COMPONENTS,
+                difficulty = Difficulty.INTERMEDIATE,
+                targetActivity = IntentFilterActivity::class.java,
+                colorRes = R.color.colorPrimary,
+                tags = listOf("IntentFilter", "广播接收", "Deep Link", "组件通信")
             ),
             
             // 网络协议

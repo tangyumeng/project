@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F3E5F5"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="另一个TaskAffinity演示"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#9C27B0"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        tools:text="另一个TaskAffinity演示" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TaskAffinity信息"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="monospace"
+        tools:text="另一个TaskAffinity信息" />
+
+    <Button
+        android:id="@+id/btn_back_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="回到主任务栈"
+        android:textColor="@android:color/white"
+        android:background="#4CAF50"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回上一页"
+        android:textColor="@android:color/white"
+        android:background="#607D8B"
+        android:padding="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 这是第三个独立的任务栈"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#F3E5F5" />
+
+</LinearLayout>

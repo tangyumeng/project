@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#E8F5E8"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TaskAffinity演示"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        tools:text="TaskAffinity演示 - 实例#1" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TaskAffinity信息"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="monospace"
+        tools:text="TaskAffinity详细信息" />
+
+    <TextView
+        android:id="@+id/tv_affinity_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="taskAffinity复用信息"
+        android:textSize="12sp"
+        android:textColor="#4CAF50"
+        android:background="#F0F8F0"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="taskAffinity复用信息" />
+
+    <TextView
+        android:id="@+id/tv_task_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详细任务栈信息"
+        android:textSize="11sp"
+        android:textColor="#666666"
+        android:background="#F8F8F8"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="monospace"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="详细任务栈信息" />
+
+    <Button
+        android:id="@+id/btn_launch_main_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动主任务栈Activity"
+        android:textColor="@android:color/white"
+        android:background="#FF9800"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_launch_self"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动自己（当前任务栈复用）"
+        android:textColor="@android:color/white"
+        android:background="#4CAF50"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_launch_with_new_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动另一个TaskAffinity Activity"
+        android:textColor="@android:color/white"
+        android:background="#9C27B0"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_show_task_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示详细任务栈信息"
+        android:textColor="@android:color/white"
+        android:background="#795548"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回主任务栈"
+        android:textColor="@android:color/white"
+        android:background="#607D8B"
+        android:padding="12dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 TaskAffinity: 控制Activity归属的任务栈"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="#E8F5E8" />
+
+</LinearLayout>

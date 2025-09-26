@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5"
+    tools:context=".IntentFilterActivity">
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IntentFilter详解"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:elevation="2dp" />
+
+    <!-- 操作按钮区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IntentFilter核心概念"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btn_basic_concepts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="基本概念"
+                android:textColor="@android:color/white"
+                android:background="#FF9800"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_action_filters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Action过滤"
+                android:textColor="@android:color/white"
+                android:background="#4CAF50"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_category_filters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Category过滤"
+                android:textColor="@android:color/white"
+                android:background="#9C27B0"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_data_filters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Data过滤"
+                android:textColor="@android:color/white"
+                android:background="#FF5722"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_dynamic_registration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="动态注册"
+                android:textColor="@android:color/white"
+                android:background="#795548"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_practical_examples"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="实际应用"
+                android:textColor="@android:color/white"
+                android:background="#607D8B"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="清空结果"
+            android:textColor="@android:color/white"
+            android:background="#424242"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- 结果显示区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="演示结果"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:padding="16dp"
+            android:background="#F0F0F0" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/tv_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#333333"
+                android:lineSpacingExtra="3dp"
+                android:fontFamily="monospace"
+                android:text=""
+                tools:text="这里会显示IntentFilter的详细演示结果..." />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- 底部提示 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 提示：IntentFilter是Android组件通信的路由规则"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#E8F5E8" />
+
+</LinearLayout>

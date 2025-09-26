@@ -110,6 +110,74 @@
             android:exported="true"
             android:label="Activity与Fragment通信演示" />
 
+        <!-- LaunchMode演示Activity -->
+        <activity
+            android:name=".LaunchModeActivity"
+            android:exported="true"
+            android:label="LaunchMode详解演示" />
+
+        <!-- Standard模式Activity -->
+        <activity
+            android:name=".StandardModeActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            android:label="Standard模式演示" />
+
+        <!-- SingleTop模式Activity -->
+        <activity
+            android:name=".SingleTopModeActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:label="SingleTop模式演示" />
+
+        <!-- SingleTask模式Activity -->
+        <activity
+            android:name=".SingleTaskModeActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:label="SingleTask模式演示" />
+
+        <!-- SingleInstance模式Activity -->
+        <activity
+            android:name=".SingleInstanceModeActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:label="SingleInstance模式演示" />
+
+        <!-- TaskAffinity演示Activity -->
+        <activity
+            android:name=".TaskAffinityDemoActivity"
+            android:exported="true"
+            android:taskAffinity="com.modelbest.project.demo"
+            android:launchMode="singleTask"
+            android:label="TaskAffinity演示" />
+
+        <!-- 另一个TaskAffinity演示Activity -->
+        <activity
+            android:name=".AnotherAffinityActivity"
+            android:exported="true"
+            android:taskAffinity="com.modelbest.project.another"
+            android:launchMode="singleTop"
+            android:label="另一个TaskAffinity演示" />
+
+        <!-- Android Context详解演示Activity -->
+        <activity
+            android:name=".AndroidContextActivity"
+            android:exported="true"
+            android:label="Android Context详解演示" />
+
+        <!-- IntentFilter详解演示Activity -->
+        <activity
+            android:name=".IntentFilterActivity"
+            android:exported="true"
+            android:label="IntentFilter详解演示" />
+
+        <!-- Service对比演示Activity -->
+        <activity
+            android:name=".ServiceComparisonActivity"
+            android:exported="true"
+            android:label="startService vs bindService演示" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"

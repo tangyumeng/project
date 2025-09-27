@@ -187,3 +187,4 @@ class AnotherAffinityActivity : AppCompatActivity() {
         }
     }
 }
+

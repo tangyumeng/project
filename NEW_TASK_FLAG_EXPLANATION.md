@@ -224,3 +224,4 @@ intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
 - 测试不同场景下的导航体验
 
 这就是"需要NEW_TASK"的完整含义 - 它是Android系统任务栈管理机制中的一个重要安全和设计考虑！
+

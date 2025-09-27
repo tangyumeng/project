@@ -553,3 +553,4 @@ class DemoService : Service() {
 - **兼容老版本Android** → Thread + Handler
 
 **结论：** DemoService使用`Job`是明智的选择，它体现了现代Android开发的最佳实践。对于演示目的和大多数实际场景，这都是最合适的方案。
+

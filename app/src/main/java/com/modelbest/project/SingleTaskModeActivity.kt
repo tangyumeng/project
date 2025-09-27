@@ -202,3 +202,4 @@ class SingleInstanceModeActivity : AppCompatActivity() {
         instanceCount--
     }
 }
+

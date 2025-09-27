@@ -3,6 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
+    <!-- RecyclerView优化演示颜色 -->
+    <color name="header_background">#FF2196F3</color>
+    <color name="button_background">#FF1976D2</color>
+    <color name="status_online">#FF4CAF50</color>
+    <color name="status_offline">#FFBDBDBD</color>
+    
     <!-- Material Design Colors -->
     <color name="teal_700">#FF018786</color>
     <color name="purple_500">#FF6200EE</color>

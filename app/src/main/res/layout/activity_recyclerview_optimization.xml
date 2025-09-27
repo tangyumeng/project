@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部控制按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="8dp"
+        android:background="@color/header_background">
+
+        <Button
+            android:id="@+id/btn_switch_adapter"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="切换到分页Adapter"
+            android:textSize="12sp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_add_data"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:text="添加数据"
+            android:textSize="12sp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_update_data"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:text="更新数据"
+            android:textSize="12sp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_clear_cache"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="清理缓存"
+            android:textSize="12sp"
+            android:background="@drawable/button_background"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

@@ -178,6 +178,30 @@
             android:exported="true"
             android:label="startService vs bindService演示" />
 
+        <!-- RecyclerView性能优化演示Activity -->
+        <activity
+            android:name=".RecyclerViewOptimizationActivity"
+            android:exported="true"
+            android:label="RecyclerView性能优化演示" />
+
+        <!-- 多ViewType演示Activity -->
+        <activity
+            android:name=".demo.MultiViewTypeActivity"
+            android:exported="true"
+            android:label="RecyclerView多ViewType详解" />
+
+        <!-- 内存泄漏演示Activity -->
+        <activity
+            android:name=".demo.MemoryLeakDemoActivity"
+            android:exported="true"
+            android:label="Android内存泄漏详解" />
+
+        <!-- Handler内存泄漏专题Activity -->
+        <activity
+            android:name=".demo.HandlerMemoryLeakDemo"
+            android:exported="true"
+            android:label="Handler内存泄漏专题" />
+
         <!-- Service组件 -->
         <service
             android:name=".DemoService"

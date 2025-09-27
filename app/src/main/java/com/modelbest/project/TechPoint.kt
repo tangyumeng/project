@@ -243,6 +243,51 @@ object TechPointDataSource {
                 targetActivity = WebSocketActivity::class.java,
                 colorRes = R.color.colorSecondary,
                 tags = listOf("WebSocket", "实时通信", "双向通信")
+            ),
+            
+            // 性能优化
+            TechPoint(
+                id = "recyclerview_optimization",
+                title = "RecyclerView性能优化",
+                description = "深入掌握RecyclerView优化技巧：ViewHolder复用、DiffUtil、对象池、预加载、图片缓存等",
+                category = TechCategory.PERFORMANCE,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = RecyclerViewOptimizationActivity::class.java,
+                colorRes = R.color.teal_700,
+                tags = listOf("RecyclerView", "性能优化", "ViewHolder", "DiffUtil", "缓存策略")
+            ),
+            
+            TechPoint(
+                id = "multi_viewtype_demo",
+                title = "RecyclerView多ViewType详解",
+                description = "全面掌握多ViewType技术：动态布局、类型管理、性能优化、企业级实践案例",
+                category = TechCategory.PERFORMANCE,
+                difficulty = Difficulty.EXPERT,
+                targetActivity = com.modelbest.project.demo.MultiViewTypeActivity::class.java,
+                colorRes = R.color.teal_700,
+                tags = listOf("多ViewType", "动态布局", "类型安全", "企业实践", "复杂列表")
+            ),
+            
+            TechPoint(
+                id = "memory_leak_demo",
+                title = "Android内存泄漏详解",
+                description = "深入分析内存泄漏原因、常见场景、检测方法和解决方案，掌握内存优化技巧",
+                category = TechCategory.PERFORMANCE,
+                difficulty = Difficulty.ADVANCED,
+                targetActivity = com.modelbest.project.demo.MemoryLeakDemoActivity::class.java,
+                colorRes = R.color.teal_700,
+                tags = listOf("内存泄漏", "WeakReference", "生命周期", "性能优化", "最佳实践")
+            ),
+            
+            TechPoint(
+                id = "handler_memory_leak",
+                title = "Handler内存泄漏专题",
+                description = "深入解析Handler内存泄漏机制，提供多种安全Handler使用方案和工具类",
+                category = TechCategory.PERFORMANCE,
+                difficulty = Difficulty.EXPERT,
+                targetActivity = com.modelbest.project.demo.HandlerMemoryLeakDemo::class.java,
+                colorRes = R.color.teal_700,
+                tags = listOf("Handler", "内存泄漏", "静态Handler", "WeakReference", "消息队列")
             )
         )
     }
